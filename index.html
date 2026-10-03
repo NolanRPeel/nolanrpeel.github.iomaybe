@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nolan Peel | Portfolio</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f7f7;
+      color: #222;
+      line-height: 1.7;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      background: #ffffff;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: #cc0033;
+    }
+
+    nav a {
+      color: #333;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #cc0033;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 600px;
+      background: #111;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 70px 8%;
+    }
+
+    .hero-container {
+      max-width: 1100px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 70px;
+    }
+
+    .hero-text {
+      max-width: 650px;
+    }
+
+    .hero-label {
+      color: #ff416c;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .hero h1 {
+      font-size: 58px;
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+
+    .hero h2 {
+      font-size: 23px;
+      font-weight: normal;
+      color: #ddd;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      color: #bbb;
+      font-size: 17px;
+      max-width: 600px;
+    }
+
+    .hero img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 6px solid #cc0033;
+    }
+
+    /* GENERAL SECTIONS */
+
+    section {
+      padding: 80px 8%;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .red-line {
+      width: 60px;
+      height: 4px;
+      background: #cc0033;
+      margin-bottom: 35px;
+    }
+
+    /* ABOUT */
+
+    .about {
+      background: white;
+    }
+
+    .about p {
+      max-width: 900px;
+      font-size: 18px;
+      margin-bottom: 18px;
+      color: #444;
+    }
+
+    /* EXPERIENCE */
+
+    .experience {
+      background: #f4f4f4;
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .experience-card {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      border-top: 4px solid #cc0033;
+    }
+
+    .experience-card h3 {
+      margin-bottom: 12px;
+      font-size: 21px;
+    }
+
+    .experience-card p {
+      color: #555;
+    }
+
+    /* SKILLS */
+
+    .skills-section {
+      background: white;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill {
+      background: #111;
+      color: white;
+      padding: 10px 17px;
+      border-radius: 4px;
+      font-size: 15px;
+    }
+
+    /* PROJECTS */
+
+    .projects-section {
+      background: #f4f4f4;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .project {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      transition: 0.2s;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-number {
+      color: #cc0033;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .project h3 {
+      font-size: 21px;
+      margin-bottom: 12px;
+    }
+
+    .project p {
+      color: #555;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 35px;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .hero-container {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero img {
+        width: 220px;
+        height: 220px;
+      }
+
+      .experience-grid,
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        flex-direction: column;
+      }
+
+      nav div:last-child {
+        margin-top: 10px;
+      }
+
+      nav a {
+        margin: 0 8px;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+    <div class="logo">NP</div>
+
+    <div>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <header class="hero">
+
+    <div class="hero-container">
+
+      <div class="hero-text">
+
+        <div class="hero-label">Student • Athlete • Entrepreneur</div>
+
+        <h1>Nolan Peel</h1>
+
+        <h2>
+          Rutgers Business School student and Division I student-athlete
+          interested in business, entrepreneurship, leadership, and
+          building meaningful relationships.
+        </h2>
+
+        <p>
+          I bring the competitive mindset of college athletics into the
+          classroom and business world, with experience in team projects,
+          data analysis, entrepreneurship, marketing, and problem solving.
+        </p>
+
+      </div>
+
+      <img src="nolanpeelheadshot.webp" alt="Nolan Peel">
+
+    </div>
+
+  </header>
+
+
+  <!-- ABOUT -->
+
+  <section class="about" id="about">
+
+    <div class="container">
+
+      <h2 class="section-title">About Me</h2>
+      <div class="red-line"></div>
+
+      <p>
+        I am a student at Rutgers Business School and a Division I
+        student-athlete on the Rutgers baseball team. Balancing academics
+        and college athletics has taught me the importance of discipline,
+        preparation, accountability, communication, and working toward
+        long-term goals.
+      </p>
+
+      <p>
+        Outside of athletics, I am especially interested in entrepreneurship
+        and the way businesses turn ideas into products, brands, and
+        successful organizations. I enjoy working with people, developing
+        relationships, solving problems, and finding practical ways to
+        improve a business.
+      </p>
+
+      <p>
+        My coursework and projects have also given me experience with
+        business technology and analytics, including Excel, SQL, Tableau,
+        marketing, management, and data-driven decision making. My goal is
+        to continue developing these skills while gaining real-world
+        business experience.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- EXPERIENCE -->
+
+  <section class="experience" id="experience">
+
+    <div class="container">
+
+      <h2 class="section-title">What Defines Me</h2>
+      <div class="red-line"></div>
+
+      <div class="experience-grid">
+
+        <div class="experience-card">
+          <h3>Business Student</h3>
+
+          <p>
+            Through Rutgers Business School, I am developing skills in
+            management, marketing, information systems, analytics, and
+            international business while applying those concepts to
+            real-world projects.
+          </p>
+        </div>
+
+
+        <div class="experience-card">
+          <h3>Division I Athlete</h3>
+
+          <p>
+            Competing in Division I baseball at Rutgers has strengthened
+            my leadership, teamwork, time management, resilience, and
+            ability to perform in competitive environments.
+          </p>
+        </div>
+
+
+        <div class="experience-card">
+          <h3>Entrepreneur</h3>
+
+          <p>
+            Building my own hat business has given me hands-on experience
+            with branding, product design, sourcing, marketing, customer
+            preferences, and the challenges involved in turning an idea
+            into a real product.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SKILLS -->
+
+  <section class="skills-section" id="skills">
+
+    <div class="container">
+
+      <h2 class="section-title">Skills</h2>
+      <div class="red-line"></div>
+
+      <div class="skills">
+
+        <span class="skill">Leadership</span>
+        <span class="skill">Communication</span>
+        <span class="skill">Teamwork</span>
+        <span class="skill">Time Management</span>
+        <span class="skill">Problem Solving</span>
+        <span class="skill">Microsoft Excel</span>
+        <span class="skill">SQL</span>
+        <span class="skill">Tableau</span>
+        <span class="skill">Data Analysis</span>
+        <span class="skill">Marketing</span>
+        <span class="skill">Management</span>
+        <span class="skill">Entrepreneurship</span>
+        <span class="skill">Brand Development</span>
+        <span class="skill">Project Management</span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROJECTS -->
+
+  <section class="projects-section" id="projects">
+
+    <div class="container">
+
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="red-line"></div>
+
+      <div class="projects">
+
+        <div class="project">
+
+          <div class="project-number">PROJECT 01</div>
+
+          <h3>Hat Business & Brand Development</h3>
+
+          <p>
+            Developed a small hat business from the ground up, working on
+            product concepts, logo and brand development, hat styles,
+            supplier research, embroidery concepts, and marketing. The
+            experience taught me how many decisions are involved in taking
+            a product from an idea to something customers can actually buy.
+          </p>
+
+        </div>
+
+
+        <div class="project">
+
+          <div class="project-number">PROJECT 02</div>
+
+          <h3>Ellan Laser Medspa Management Analysis</h3>
+
+          <p>
+            Worked with a team to study employee turnover at a local
+            medical spa. Our team gathered primary information, analyzed
+            the organization's employee-retention challenge, applied
+            management concepts, and developed recommendations designed
+            to improve employee development and retention.
+          </p>
+
+        </div>
+
+
+        <div class="project">
+
+          <div class="project-number">PROJECT 03</div>
+
+          <h3>Business Analytics & Information Systems</h3>
+
+          <p>
+            Used Excel, Tableau, and SQL in business coursework to organize
+            information, analyze data, create visualizations, and answer
+            business questions. These projects strengthened my ability to
+            use technology and data to support decision making.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <p>
+      <strong>Nolan Peel</strong><br>
+      Rutgers Business School • Rutgers Baseball
+    </p>
+
+  </footer>
+
+
+</body>
+
+</html>
